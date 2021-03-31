@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace quan_ly_kho
 {
-    public partial class Form1 : Form
+    public partial class QlPhieuXuatForm : Form
     {
-        public Form1()
+        public QlPhieuXuatForm()
         {
             InitializeComponent();
         }

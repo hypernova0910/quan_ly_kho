@@ -25,8 +25,14 @@ namespace quan_ly_kho
 
         private void pnPhieuXuat_Click(object sender, EventArgs e)
         {
-            QlPhieuXuatForm qLPhieuXuat = new QlPhieuXuatForm();
-            qLPhieuXuat.Visible = true;
+            QlPhieuXuatForm qlPhieuXuat = new QlPhieuXuatForm();
+            qlPhieuXuat.Visible = true;
+        }
+
+        private void pnThongKe_Click(object sender, EventArgs e)
+        {
+            ThongKeForm thongKe = new ThongKeForm();
+            thongKe.Visible = true;
         }
     }
 }

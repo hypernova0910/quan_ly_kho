@@ -34,5 +34,10 @@ namespace quan_ly_kho
             ThongKeForm thongKe = new ThongKeForm();
             thongKe.Visible = true;
         }
+
+        private void pnPhieuNhap_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

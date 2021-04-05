@@ -80,6 +80,12 @@
     <Compile Include="ThemPhieuNhap.Designer.cs">
       <DependentUpon>ThemPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemPhieuXuat.Designer.cs">
+      <DependentUpon>ThemPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongKeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemPhieuNhap.resx">
       <DependentUpon>ThemPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemPhieuXuat.resx">
+      <DependentUpon>ThemPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeForm.resx">
       <DependentUpon>ThongKeForm.cs</DependentUpon>

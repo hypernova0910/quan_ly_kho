@@ -12,7 +12,7 @@ namespace quan_ly_kho
     public class CSDL
     {
 
-        private string connectionString = "Data Source=LAPCUATUNG\\SQLEXPRESS;Initial Catalog=QLKho;Integrated Security=True";
+        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QLKho;Integrated Security=True";
         private SqlConnection conn;
 
         //private string sql;

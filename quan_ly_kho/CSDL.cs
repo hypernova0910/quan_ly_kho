@@ -102,8 +102,8 @@ namespace quan_ly_kho
             }
         }
 
-        
-       
+
+
 
         public bool executeNonQuery(string sql)
         {

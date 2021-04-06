@@ -36,5 +36,52 @@ namespace quan_ly_kho
             new ThemPhieuXuat(null).ShowDialog();
             LoadPhieuXuat();
         }
+
+        private void resetValue()
+        {
+            txbPhieuXuatTT.Text = "";
+        }
+
+        private void btnPXTimKiem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbPhieuXuatTT.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (cbbTimKiemPX.SelectedIndex != -1)
+                {
+                    String valueSearch = txbPhieuXuatTT.Text;
+                    var db = new CSDL();
+                    String sqlSearch = "";
+                    if (cbbTimKiemPX.SelectedIndex == 0)
+                    {
+                        sqlSearch = "exec searchMHS '" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOut(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (cbbTimKiemPX.SelectedIndex == 1)
+                    {
+                        sqlSearch = "exec searchTHS N'" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOut(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                resetValue();
+            }
+        }
     }
 }

@@ -74,6 +74,18 @@
     <Compile Include="QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchOutPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchOutPN.Designer.cs">
+      <DependentUpon>SearchOutPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchOutPX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchOutPX.Designer.cs">
+      <DependentUpon>SearchOutPX.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>

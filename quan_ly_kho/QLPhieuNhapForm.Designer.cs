@@ -68,6 +68,7 @@ namespace quan_ly_kho
             this.btnPNTimKiem.TabIndex = 3;
             this.btnPNTimKiem.Text = "Tìm kiếm";
             this.btnPNTimKiem.UseVisualStyleBackColor = true;
+            this.btnPNTimKiem.Click += new System.EventHandler(this.btnPNTimKiem_Click);
             // 
             // btnPNXoa
             // 

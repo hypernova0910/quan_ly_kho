@@ -37,5 +37,52 @@ namespace quan_ly_kho
             new ThemPhieuNhap(null).ShowDialog();
             LoadPhieuNhap();
         }
+
+        private void resetValue()
+        {
+            txbPhieuNhapTT.Text = "";
+        }
+
+        private void btnPNTimKiem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbPhieuNhapTT.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (cbbTimKiemPN.SelectedIndex != -1)
+                {
+                    String valueSearch = txbPhieuNhapTT.Text;
+                    var db = new CSDL();
+                    String sqlSearch = "";
+                    if (cbbTimKiemPN.SelectedIndex == 0)
+                    {
+                        sqlSearch = "exec timKiemPhieuNhap '" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOutPN(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (cbbTimKiemPN.SelectedIndex == 1)
+                    {
+                        sqlSearch = "exec timKiemMaHangNhap N'" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOutPN(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                resetValue();
+            }
+        }
     }
 }

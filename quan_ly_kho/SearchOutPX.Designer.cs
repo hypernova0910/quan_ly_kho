@@ -29,12 +29,39 @@ namespace quan_ly_kho
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dvgSearch = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSearch)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dvgSearch
+            // 
+            this.dvgSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgSearch.Location = new System.Drawing.Point(50, 68);
+            this.dvgSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dvgSearch.Name = "dvgSearch";
+            this.dvgSearch.RowHeadersWidth = 51;
+            this.dvgSearch.RowTemplate.Height = 24;
+            this.dvgSearch.Size = new System.Drawing.Size(701, 315);
+            this.dvgSearch.TabIndex = 2;
+            this.dvgSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgSearch_CellContentClick);
+            // 
+            // SearchOutPX
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dvgSearch);
+            this.Name = "SearchOutPX";
             this.Text = "SearchOutPX";
+            this.Load += new System.EventHandler(this.SearchOutPX_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSearch)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dvgSearch;
     }
 }

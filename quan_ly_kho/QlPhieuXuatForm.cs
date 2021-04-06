@@ -57,10 +57,10 @@ namespace quan_ly_kho
                     String sqlSearch = "";
                     if (cbbTimKiemPX.SelectedIndex == 0)
                     {
-                        sqlSearch = "exec searchMHS '" + valueSearch + "'";
+                        sqlSearch = "exec timKiemPhieuXuat '" + valueSearch + "'";
                         if (db.SelectData(sqlSearch).Rows.Count != 0)
                         {
-                            new SearchOut(sqlSearch).Show();
+                            new SearchOutPX(sqlSearch).Show();
                         }
                         else
                         {
@@ -69,10 +69,10 @@ namespace quan_ly_kho
                     }
                     else if (cbbTimKiemPX.SelectedIndex == 1)
                     {
-                        sqlSearch = "exec searchTHS N'" + valueSearch + "'";
+                        sqlSearch = "exec timKiemMaHangXuat N'" + valueSearch + "'";
                         if (db.SelectData(sqlSearch).Rows.Count != 0)
                         {
-                            new SearchOut(sqlSearch).Show();
+                            new SearchOutPX(sqlSearch).Show();
                         }
                         else
                         {

@@ -1,7 +1,7 @@
 ﻿
 namespace quan_ly_kho
 {
-    partial class SearchOutPN
+    partial class SearchOutHang
     {
         /// <summary>
         /// Required designer variable.
@@ -45,15 +45,15 @@ namespace quan_ly_kho
             this.dvgSearch.Size = new System.Drawing.Size(701, 315);
             this.dvgSearch.TabIndex = 3;
             // 
-            // SearchOutPN
+            // SearchOutHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dvgSearch);
-            this.Name = "SearchOutPN";
-            this.Text = "SearchOutPN";
-            this.Load += new System.EventHandler(this.SearchOutPN_Load_1);
+            this.Name = "SearchOutHang";
+            this.Text = "SearchOutHang";
+            this.Load += new System.EventHandler(this.SearchOutHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgSearch)).EndInit();
             this.ResumeLayout(false);
 

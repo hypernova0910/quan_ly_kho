@@ -53,5 +53,39 @@ namespace quan_ly_kho
             LoadTKHH();
             LoadTKNX();
         }
+        private void resetValue()
+        {
+            txbHangTT.Text = "";
+        }
+
+        private void btnHangTimKiem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbHangTT.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (cbbTimKiemHang.SelectedIndex != -1)
+                {
+                    String valueSearch = txbHangTT.Text;
+                    var db = new CSDL();
+                    String sqlSearch = "";
+                    if (cbbTimKiemHang.SelectedIndex == 0)
+                    {
+                        sqlSearch = "exec timKiemMaHang '" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOutHang(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                resetValue();
+            }
+        }
     }
 }

@@ -32,7 +32,6 @@ namespace quan_ly_kho
             this.cbbTimKiemPN = new System.Windows.Forms.ComboBox();
             this.txbPhieuNhapTT = new System.Windows.Forms.TextBox();
             this.btnPNTimKiem = new System.Windows.Forms.Button();
-            this.btnPNXoa = new System.Windows.Forms.Button();
             this.btnPNThem = new System.Windows.Forms.Button();
             this.dgvPhieuNhap = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
@@ -70,19 +69,9 @@ namespace quan_ly_kho
             this.btnPNTimKiem.UseVisualStyleBackColor = true;
             this.btnPNTimKiem.Click += new System.EventHandler(this.btnPNTimKiem_Click);
             // 
-            // btnPNXoa
-            // 
-            this.btnPNXoa.Location = new System.Drawing.Point(860, 721);
-            this.btnPNXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPNXoa.Name = "btnPNXoa";
-            this.btnPNXoa.Size = new System.Drawing.Size(139, 37);
-            this.btnPNXoa.TabIndex = 7;
-            this.btnPNXoa.Text = "Xóa";
-            this.btnPNXoa.UseVisualStyleBackColor = true;
-            // 
             // btnPNThem
             // 
-            this.btnPNThem.Location = new System.Drawing.Point(103, 721);
+            this.btnPNThem.Location = new System.Drawing.Point(498, 721);
             this.btnPNThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPNThem.Name = "btnPNThem";
             this.btnPNThem.Size = new System.Drawing.Size(139, 37);
@@ -108,7 +97,6 @@ namespace quan_ly_kho
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 789);
             this.Controls.Add(this.dgvPhieuNhap);
-            this.Controls.Add(this.btnPNXoa);
             this.Controls.Add(this.btnPNThem);
             this.Controls.Add(this.btnPNTimKiem);
             this.Controls.Add(this.txbPhieuNhapTT);
@@ -128,7 +116,6 @@ namespace quan_ly_kho
         private System.Windows.Forms.ComboBox cbbTimKiemPN;
         private System.Windows.Forms.TextBox txbPhieuNhapTT;
         private System.Windows.Forms.Button btnPNTimKiem;
-        private System.Windows.Forms.Button btnPNXoa;
         private System.Windows.Forms.Button btnPNThem;
         private System.Windows.Forms.DataGridView dgvPhieuNhap;
     }

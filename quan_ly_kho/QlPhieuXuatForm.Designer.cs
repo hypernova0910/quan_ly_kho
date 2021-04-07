@@ -30,7 +30,6 @@ namespace quan_ly_kho
         private void InitializeComponent()
         {
             this.dgvPhieuXuat = new System.Windows.Forms.DataGridView();
-            this.btnPXXoa = new System.Windows.Forms.Button();
             this.btnPXThem = new System.Windows.Forms.Button();
             this.btnPXTimKiem = new System.Windows.Forms.Button();
             this.txbPhieuXuatTT = new System.Windows.Forms.TextBox();
@@ -49,19 +48,9 @@ namespace quan_ly_kho
             this.dgvPhieuXuat.Size = new System.Drawing.Size(896, 546);
             this.dgvPhieuXuat.TabIndex = 14;
             // 
-            // btnPXXoa
-            // 
-            this.btnPXXoa.Location = new System.Drawing.Point(885, 702);
-            this.btnPXXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPXXoa.Name = "btnPXXoa";
-            this.btnPXXoa.Size = new System.Drawing.Size(139, 37);
-            this.btnPXXoa.TabIndex = 13;
-            this.btnPXXoa.Text = "Xóa";
-            this.btnPXXoa.UseVisualStyleBackColor = true;
-            // 
             // btnPXThem
             // 
-            this.btnPXThem.Location = new System.Drawing.Point(129, 702);
+            this.btnPXThem.Location = new System.Drawing.Point(501, 717);
             this.btnPXThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPXThem.Name = "btnPXThem";
             this.btnPXThem.Size = new System.Drawing.Size(139, 37);
@@ -108,7 +97,6 @@ namespace quan_ly_kho
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1155, 798);
             this.Controls.Add(this.dgvPhieuXuat);
-            this.Controls.Add(this.btnPXXoa);
             this.Controls.Add(this.btnPXThem);
             this.Controls.Add(this.btnPXTimKiem);
             this.Controls.Add(this.txbPhieuXuatTT);
@@ -127,7 +115,6 @@ namespace quan_ly_kho
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPhieuXuat;
-        private System.Windows.Forms.Button btnPXXoa;
         private System.Windows.Forms.Button btnPXThem;
         private System.Windows.Forms.Button btnPXTimKiem;
         private System.Windows.Forms.TextBox txbPhieuXuatTT;

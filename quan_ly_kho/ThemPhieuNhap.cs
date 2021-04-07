@@ -28,11 +28,11 @@ namespace quan_ly_kho
         {
             //MessageBox.Show("Mã SV nhận được: " + msv);
             CSDL csdl = new CSDL();
-            string getAllhang = "SELECT MaHang FROM HANG";
-            DataTable mahangTable = csdl.SelectData(getAllhang);
-            cbMaHang.DataSource = mahangTable.Copy();
-            cbMaHang.DisplayMember = "MaHang";
-            cbMaHang.ValueMember = "MaHang";
+            //string getAllhang = "SELECT MaHang FROM HANG";
+            //DataTable mahangTable = csdl.SelectData(getAllhang);
+            //cbMaHang.DataSource = mahangTable.Copy();
+            //cbMaHang.DisplayMember = "MaHang";
+            //cbMaHang.ValueMember = "MaHang";
             if (!string.IsNullOrEmpty(mhs))
             {
                 this.Text = "Cập nhật thông tin ";
@@ -48,25 +48,21 @@ namespace quan_ly_kho
         private void btnSave_Click(object sender, EventArgs e)
         {
             string sql="";
-            string maPhieu = txtMaPhieu.Text;
+            //string maPhieu = txtMaPhieu.Text;
             DateTime NgayNhap = dtpDate.Value;
             string NSX = txtNSX.Text;
-            DataRowView drvMaHang = (DataRowView)cbMaHang.SelectedItem;
-            string MaHang = drvMaHang.Row.Field<string>("MaHang");
+            //DataRowView drvMaHang = (DataRowView)cbMaHang.SelectedItem;
+            //string MaHang = drvMaHang.Row.Field<string>("MaHang");
+            string tenHang = txtTenHang.Text;
+            float khoiLuong = (float)nudKhoiLuong.Value;
+            int giaTri = (int)nudGiaTri.Value;
 
             List<CustomParameter> lstPara = new List<CustomParameter>();
 
             if (string.IsNullOrEmpty(mhs))
             {
-                sql = "ThemMoiPhieuNhap";
+                sql = "nhapHang";
             }
-
-
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@MaPhieu",
-                value = maPhieu
-            });
 
             lstPara.Add(new CustomParameter()
             {
@@ -82,15 +78,24 @@ namespace quan_ly_kho
 
             lstPara.Add(new CustomParameter()
             {
-                key = "@MaHang",
-                value = MaHang
+                key = "@TenHang",
+                value = tenHang
             });
-            
 
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@KhoiLuong",
+                value = khoiLuong.ToString()
+            });
 
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@GiaTri",
+                value = giaTri.ToString()
+            });
 
             var rs = new CSDL().ExeCute(sql, lstPara);
-            if (rs == 1)
+            if (rs == 2)
             {
                 if (string.IsNullOrEmpty(mhs))
                 {

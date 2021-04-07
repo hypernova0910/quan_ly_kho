@@ -21,7 +21,7 @@ namespace quan_ly_kho
         private void ThemPhieuXuat_Load(object sender, EventArgs e)
         {
             CSDL csdl = new CSDL();
-            string getAllhang = "SELECT MaHang FROM HANG";
+            string getAllhang = "SELECT MaHang FROM HANG WHERE DaXuat = 0";
             DataTable mahangTable = csdl.SelectData(getAllhang);
             cbbMaHang.DataSource = mahangTable.Copy();
             cbbMaHang.DisplayMember = "MaHang";
@@ -39,7 +39,7 @@ namespace quan_ly_kho
         private void btnSave_Click(object sender, EventArgs e)
         {
             string sql = "";
-            string maP = txbMaPhieu.Text;
+            //string maP = txbMaPhieu.Text;
             DateTime ngayXuat = dtpNgayXuat.Value;
             string noiNhap = txbNoiNhap.Text;
             DataRowView drvMaHang = (DataRowView)cbbMaHang.SelectedItem;
@@ -49,25 +49,25 @@ namespace quan_ly_kho
 
             if (string.IsNullOrEmpty(maPhieu))
             {
-                sql = "ThemMoiPhieuXuat";
+                sql = "xuatHang";
             }
 
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@MaPhieu",
-                value = maP
-            });
+            //lstPara.Add(new CustomParameter()
+            //{
+            //    key = "@MaPhieu",
+            //    value = maP
+            //});
 
             lstPara.Add(new CustomParameter()
             {
-                key = "@MaHang",
-                value = maHang
-            });
-
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@NgayXuat",
+                key = "@TGXuat",
                 value = ngayXuat.ToString("yyyy-MM-dd")
+            });
+
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@maHang",
+                value = maHang
             });
 
             lstPara.Add(new CustomParameter()
@@ -77,7 +77,7 @@ namespace quan_ly_kho
             });
 
             var rs = new CSDL().ExeCute(sql, lstPara);
-            if (rs == 1)
+            if (rs == 2)
             {
                 if (string.IsNullOrEmpty(maPhieu))
                 {

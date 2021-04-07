@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -43,7 +44,8 @@ namespace quan_ly_kho
 
         private void lilbAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Hướng dẫn ở đây");
+            Process.Start(Application.StartupPath + "\\Huong_ dan\\index.html");
+
         }
     }
 }
